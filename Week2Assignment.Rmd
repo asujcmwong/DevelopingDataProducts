@@ -1,0 +1,40 @@
+---
+title: "Developing Data Products - Week 2 Assignment"
+author: "Joseph Wong"
+date: "November 24, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Instructions
+Create a web page using R Markdown that features a map created with Leaflet.
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+## Review Criteria
+The rubric contains the following two questions:
+
+Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+Does the web page feature an interactive map that appears to have been created with Leaflet?
+
+## Baja Fresh Locations in AZ
+```{r Baja Fresh Locations in AZ}
+df = data.frame(lat = c(33.50876, 33.3195088), lng = c(-112.046798, -111.9265852))
+df
+```
+
+## Interactive Map
+
+```{r locator, echo=FALSE}
+library(leaflet)
+df %>%
+  leaflet() %>%
+  addTiles() %>%
+  addMarkers()
+```
+ 
